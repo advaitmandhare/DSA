@@ -68,7 +68,7 @@ void adjmatlist::adjlist()
       node *p = new node;
       p->next = NULL;
       p->vertex = v[i];
-      p->time = m[i][j];
+      p->time = 0;
       head[i] = p;
       cout << "\n"
            << head[i]->vertex;
