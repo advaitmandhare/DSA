@@ -35,7 +35,7 @@ node *insertInBST(node *root, int val)
 }
 
 // Non Recursive code to insert
-// node *insertBST(node *root, int val)
+// node *insertInBST(node *root, int val)
 // {
 //     node *newNode = new node(val);
 //     if (root == NULL)
@@ -134,6 +134,10 @@ int main()
     insertInBST(root, 2);
     insertInBST(root, 7);
 
+    cout << "inorder after creating tree: " << endl;
+    inorder(root);
+    cout << endl;
+
     // i. Insert new node
     int newValue = 6;
     insertInBST(root, newValue);
@@ -141,7 +145,7 @@ int main()
     inorder(root);
 
     // ii. Find number of nodes in the longest path from root
-    cout << "\nNumber of nodes in the longest path from root: " << findHeight(root) - 1;
+    cout << "\nNumber of nodes in the longest path from root: " << findHeight(root);
 
     // iii. Minimum data value found in the tree
     cout << "\nMinimum data value in the tree: " << minValue(root);
