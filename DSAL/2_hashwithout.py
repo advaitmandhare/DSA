@@ -29,17 +29,33 @@ def search(client_list,key):
 		print(key," Not found....")
 	
 
-def delete(client_list):
-	key=int(input("Enter the id of deleted client:"))
-	x=key%10
-	p=x
-	while(client_list[x]!=None and  key!=client_list[x][0] and client_list[x][3]!=None ):
-		x=client_list[x][3]
+# def delete(client_list):
+# 	key=int(input("Enter the id of deleted client:"))
+# 	x=key%10
+# 	p=x
+# 	while(client_list[x]!=None and  key!=client_list[x][0] and client_list[x][3]!=None ):
+# 		x=client_list[x][3]
 	
-	while(client_list[p][3]!=x):
-		p=client_list[p][3]
-	client_list[p][3]=None							
-	if(client_list[x][3]!=None):
+# 	while(client_list[p][3]!=x):
+# 		p=client_list[p][3]
+# 	client_list[p][3]=None							
+# 	if(client_list[x][3]!=None):
+# 		client_list[p][3]=client_list[x][3]
+# 	client_list[x]=None
+
+def delete(client_list):
+	key=int(input("Enter the key to be deleted"))
+	x=key%10
+	p=None
+	while(client_list[x]!=None and key!=client_list[x][0]):
+		p=xx=client_list[x][3]
+
+	if(client_list[x]==None):
+		print("The entry with the ",key,"does not exists")
+
+	if(p==None):
+		client_list[x]=client_list[x][3]
+	else:
 		client_list[p][3]=client_list[x][3]
 	client_list[x]=None
 	
